@@ -1,3 +1,7 @@
+const fs = require("fs");
+const inquirer = require("inquirer");
+const api = require("./api.js")
+const generateMarkdown = require ("./generateMarkdown")
 // array of questions for user
 const questions = [
 
