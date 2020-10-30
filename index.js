@@ -1,5 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const util = require('util');
 const api = require("./utils/api.js")
 const generateMarkdown = require ("./utils/generateMarkdown")
 // array of questions for user
@@ -70,6 +71,12 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log('Your markdown file has been created.')
+    });
 }
 
 // function to initialize program
